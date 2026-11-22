@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --canvas: #0b090c;
+    --slab: rgba(21, 16, 22, 0.76);
+    --surface: #171219;
+    --surface-elevated: #211924;
+    --crimson: #e11d48;
+    --crimson-bright: #fb7185;
+    --crimson-deep: #9f1239;
+    --champagne: #ffb95f;
+    --champagne-soft: #fde68a;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #64748b;
+  }
+
+  html {
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    background-color: var(--canvas);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0b090c;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 85% -10%, rgba(159, 18, 57, 0.16), transparent 60%),
+      radial-gradient(ellipse 60% 45% at 10% 105%, rgba(225, 29, 72, 0.08), transparent 55%),
+      radial-gradient(ellipse 40% 35% at 50% 25%, rgba(255, 185, 95, 0.04), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+}
+
+.font-mono-tabular {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums-ar {
+  font-variant-numeric: tabular-nums;
+}
+
+.glass-slab {
+  background: rgba(21, 16, 22, 0.74);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-slab-crimson {
+  background: linear-gradient(155deg, rgba(33, 21, 29, 0.84) 0%, rgba(18, 13, 19, 0.88) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(225, 29, 72, 0.24);
+  box-shadow: 0 14px 36px -14px rgba(225, 29, 72, 0.22);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
